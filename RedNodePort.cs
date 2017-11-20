@@ -280,11 +280,7 @@ namespace RedNODEHost
 
         private void Process_PRETMP(object[] parameters)
         {
-            Pressure = (double)parameters[0];
-
-            // TODO: !!!
-            //Pressure += 200;
-
+            Pressure = (double)parameters[0];            
             if (PressureUpdated != null) PressureUpdated(this, new EventArgs());
             
         }
@@ -292,10 +288,6 @@ namespace RedNODEHost
         private void Process_DPTTMP(object[] parameters)
         {
             Depth = (double)parameters[0];
-
-            /// TODO: !!!
-            //Depth += 2;
-
             if (DepthUpdated != null) DepthUpdated(this, new EventArgs());
         }
 
@@ -319,24 +311,86 @@ namespace RedNODEHost
 
         private void Process_GGA(object[] parameters)
         {
-            //
-            
-            //$GNGGA,123519,4807.038,N,01131.000,E,1,08,0.9,545.4,M,46.9,M,,*47
+            if (GGAEvent != null)
+            {
+                var gpsQualityIndicator = (string)parameters[5];
+                if (gpsQualityIndicator != "Fix not availible")
+                {
+                    try
+                    {
+                        var timeFix = (DateTime)parameters[0];
+                        var lat = doubleNullChecker(parameters[1]);
+                        var lon = doubleNullChecker(parameters[3]);
+                        var satellitesInUse = intNullChecker(parameters[6]);
+                        var precisionHorizontalDilution = doubleNullChecker(parameters[7]);
+                        var antennaAltitude = doubleNullChecker(parameters[8]);
+                        var antennaAltitudeUnits = (string)parameters[9];
+                        var geoidalSeparation = doubleNullChecker(parameters[10]);
+                        var geoidalSeparationUnits = (string)parameters[11];
+
+                        var differentialReferenceStation = intNullChecker(parameters[12]);
+
+                        GGAEvent(this,
+                            new GGAEventArgs(
+                                TalkerIdentifiers.GN,
+                                gpsQualityIndicator,
+                                timeFix,
+                                lat,
+                                lon,
+                                satellitesInUse,
+                                precisionHorizontalDilution,
+                                antennaAltitude,
+                                geoidalSeparation,
+                                differentialReferenceStation));
+                    }
+                    catch
+                    {
+                        //
+                    }
+                }
+            }
         }
 
         private void Process_RMC(object[] parameters)
         {
-            //throw new NotImplementedException();
+            if (RMCEvent != null)
+            {
+                try
+                {
+                    if (parameters[1].ToString() != "Invalid")
+                    {
+                        var timeFix = (DateTime)parameters[0];
+
+                        var lat = (double)parameters[2];
+                        var latC = (Cardinals)Enum.Parse(typeof(Cardinals), (string)parameters[3]);
+                        if (latC == Cardinals.South)
+                            lat = -lat;
+
+                        var lon = (double)parameters[4];
+                        var lonC = (Cardinals)Enum.Parse(typeof(Cardinals), (string)parameters[5]);
+                        if (lonC == Cardinals.West)
+                            lon = -lon;
+
+                        var groundSpeed = (double)parameters[6];
+                        var courseOverGround = (double)parameters[7];
+
+                        var dateTime = (DateTime)parameters[8];
+
+                        var magneticVariation = doubleNullChecker(parameters[9]);
+
+                        RMCEvent(this, new RMCEventArgs(TalkerIdentifiers.GN, timeFix, lat, lon, NMEAParser.NM2Km(groundSpeed), courseOverGround, magneticVariation));
+                    }
+                }
+                catch
+                {
+                    //
+                }
+            }
         }
 
         private void Process_MTW(object[] parameters)
         {
             Temperature = (double)parameters[0];
-
-            /// TODO:
-
-            //Temperature -= 10.5;
-
             if (TemperatureUpdated != null) TemperatureUpdated(this, new EventArgs());
         }
 
@@ -346,11 +400,8 @@ namespace RedNODEHost
 
             Latitude = (double)parameters[0];
             Longitude = (double)parameters[1];
-            RadialError = (double)parameters[3];
-
-            /// TODO:
-
-            //RadialError /= 4;
+            Depth = (double)parameters[2];
+            RadialError = (double)parameters[3];         
 
             RedBASE_1.Latitude = (double)parameters[4];
             RedBASE_1.Longitude = (double)parameters[5];
@@ -563,6 +614,9 @@ namespace RedNODEHost
         public EventHandler TemperatureUpdated;
         public EventHandler BasesUpdated;
         public EventHandler PositionUpdated;
+
+        public EventHandler<GGAEventArgs> GGAEvent;
+        public EventHandler<RMCEventArgs> RMCEvent;
 
         public EventHandler<LogEventArgs> LogEvent;
                 

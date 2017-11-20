@@ -325,6 +325,13 @@ namespace RedNODEHost
                     e.Graphics.DrawString(lonLabel, this.Font, Brushes.Black, 5.0f, top + 2.0f);
                 }
 
+                //string statistics = string.Format("CEP: {0:F02} m\r\nDRMS: {1:F02} m\r\n2DRMS: {2:F02}\r\n3DRMS: {3:F02}",
+                //accEval.CEP,
+                //accEval.DRMS,
+                //accEval.DRMS2,
+                //accEval.DRMS3);
+                
+                //e.Graphics.DrawString(statistics, this.Font, Brushes.Green, -this.Width / 2 + 10, -this.Height / 2 + 10);                
             }                    
         }
 

@@ -355,7 +355,7 @@
             this.serialNumberLbl.AutoSize = true;
             this.serialNumberLbl.ContextMenuStrip = this.serialContextMnu;
             this.serialNumberLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.serialNumberLbl.Location = new System.Drawing.Point(175, 81);
+            this.serialNumberLbl.Location = new System.Drawing.Point(172, 81);
             this.serialNumberLbl.Margin = new System.Windows.Forms.Padding(3);
             this.serialNumberLbl.Name = "serialNumberLbl";
             this.serialNumberLbl.Size = new System.Drawing.Size(37, 20);
@@ -380,7 +380,7 @@
             // 
             this.pressureRatingLbl.AutoSize = true;
             this.pressureRatingLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.pressureRatingLbl.Location = new System.Drawing.Point(175, 55);
+            this.pressureRatingLbl.Location = new System.Drawing.Point(172, 55);
             this.pressureRatingLbl.Margin = new System.Windows.Forms.Padding(3);
             this.pressureRatingLbl.Name = "pressureRatingLbl";
             this.pressureRatingLbl.Size = new System.Drawing.Size(37, 20);
@@ -391,7 +391,7 @@
             // 
             this.acCoreInfoLbl.AutoSize = true;
             this.acCoreInfoLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.acCoreInfoLbl.Location = new System.Drawing.Point(175, 29);
+            this.acCoreInfoLbl.Location = new System.Drawing.Point(172, 29);
             this.acCoreInfoLbl.Margin = new System.Windows.Forms.Padding(3);
             this.acCoreInfoLbl.Name = "acCoreInfoLbl";
             this.acCoreInfoLbl.Size = new System.Drawing.Size(37, 20);
@@ -402,7 +402,7 @@
             // 
             this.systemInfoLbl.AutoSize = true;
             this.systemInfoLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.systemInfoLbl.Location = new System.Drawing.Point(175, 3);
+            this.systemInfoLbl.Location = new System.Drawing.Point(172, 3);
             this.systemInfoLbl.Margin = new System.Windows.Forms.Padding(3);
             this.systemInfoLbl.Name = "systemInfoLbl";
             this.systemInfoLbl.Size = new System.Drawing.Size(37, 20);
@@ -457,7 +457,7 @@
             // 
             this.depthLbl.AutoSize = true;
             this.depthLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.depthLbl.Location = new System.Drawing.Point(175, 130);
+            this.depthLbl.Location = new System.Drawing.Point(172, 130);
             this.depthLbl.Margin = new System.Windows.Forms.Padding(3);
             this.depthLbl.Name = "depthLbl";
             this.depthLbl.Size = new System.Drawing.Size(37, 20);
@@ -468,7 +468,7 @@
             // 
             this.latLbl.AutoSize = true;
             this.latLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.latLbl.Location = new System.Drawing.Point(175, 156);
+            this.latLbl.Location = new System.Drawing.Point(172, 156);
             this.latLbl.Margin = new System.Windows.Forms.Padding(3);
             this.latLbl.Name = "latLbl";
             this.latLbl.Size = new System.Drawing.Size(37, 20);
@@ -479,7 +479,7 @@
             // 
             this.lonLbl.AutoSize = true;
             this.lonLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lonLbl.Location = new System.Drawing.Point(175, 182);
+            this.lonLbl.Location = new System.Drawing.Point(172, 182);
             this.lonLbl.Margin = new System.Windows.Forms.Padding(3);
             this.lonLbl.Name = "lonLbl";
             this.lonLbl.Size = new System.Drawing.Size(37, 20);
@@ -490,7 +490,7 @@
             // 
             this.rerrLbl.AutoSize = true;
             this.rerrLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.rerrLbl.Location = new System.Drawing.Point(175, 208);
+            this.rerrLbl.Location = new System.Drawing.Point(172, 208);
             this.rerrLbl.Margin = new System.Windows.Forms.Padding(3);
             this.rerrLbl.Name = "rerrLbl";
             this.rerrLbl.Size = new System.Drawing.Size(37, 20);
@@ -501,7 +501,7 @@
             // 
             this.pressureLbl.AutoSize = true;
             this.pressureLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.pressureLbl.Location = new System.Drawing.Point(175, 234);
+            this.pressureLbl.Location = new System.Drawing.Point(172, 234);
             this.pressureLbl.Margin = new System.Windows.Forms.Padding(3);
             this.pressureLbl.Name = "pressureLbl";
             this.pressureLbl.Size = new System.Drawing.Size(37, 20);
@@ -512,7 +512,7 @@
             // 
             this.base1Lbl.AutoSize = true;
             this.base1Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.base1Lbl.Location = new System.Drawing.Point(175, 312);
+            this.base1Lbl.Location = new System.Drawing.Point(172, 312);
             this.base1Lbl.Margin = new System.Windows.Forms.Padding(3);
             this.base1Lbl.Name = "base1Lbl";
             this.base1Lbl.Size = new System.Drawing.Size(37, 20);
@@ -581,9 +581,9 @@
             this.label18.Location = new System.Drawing.Point(3, 234);
             this.label18.Margin = new System.Windows.Forms.Padding(3);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(127, 20);
+            this.label18.Size = new System.Drawing.Size(124, 20);
             this.label18.TabIndex = 17;
-            this.label18.Text = "Pressure, mBar";
+            this.label18.Text = "Pressure, mbar";
             // 
             // label20
             // 
@@ -592,9 +592,9 @@
             this.label20.Location = new System.Drawing.Point(3, 260);
             this.label20.Margin = new System.Windows.Forms.Padding(3);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(125, 20);
+            this.label20.Size = new System.Drawing.Size(132, 20);
             this.label20.TabIndex = 19;
-            this.label20.Text = "Temperature, C";
+            this.label20.Text = "Temperature, °C";
             // 
             // label23
             // 
@@ -622,7 +622,7 @@
             // 
             this.base2Lbl.AutoSize = true;
             this.base2Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.base2Lbl.Location = new System.Drawing.Point(175, 338);
+            this.base2Lbl.Location = new System.Drawing.Point(172, 338);
             this.base2Lbl.Margin = new System.Windows.Forms.Padding(3);
             this.base2Lbl.Name = "base2Lbl";
             this.base2Lbl.Size = new System.Drawing.Size(37, 20);
@@ -655,7 +655,7 @@
             // 
             this.base3Lbl.AutoSize = true;
             this.base3Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.base3Lbl.Location = new System.Drawing.Point(175, 364);
+            this.base3Lbl.Location = new System.Drawing.Point(172, 364);
             this.base3Lbl.Margin = new System.Windows.Forms.Padding(3);
             this.base3Lbl.Name = "base3Lbl";
             this.base3Lbl.Size = new System.Drawing.Size(37, 20);
@@ -666,7 +666,7 @@
             // 
             this.base4Lbl.AutoSize = true;
             this.base4Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.base4Lbl.Location = new System.Drawing.Point(175, 390);
+            this.base4Lbl.Location = new System.Drawing.Point(172, 390);
             this.base4Lbl.Margin = new System.Windows.Forms.Padding(3);
             this.base4Lbl.Name = "base4Lbl";
             this.base4Lbl.Size = new System.Drawing.Size(37, 20);
@@ -687,7 +687,7 @@
             // 
             this.soundSpeedLbl.AutoSize = true;
             this.soundSpeedLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.soundSpeedLbl.Location = new System.Drawing.Point(175, 286);
+            this.soundSpeedLbl.Location = new System.Drawing.Point(172, 286);
             this.soundSpeedLbl.Margin = new System.Windows.Forms.Padding(3);
             this.soundSpeedLbl.Name = "soundSpeedLbl";
             this.soundSpeedLbl.Size = new System.Drawing.Size(37, 20);
@@ -698,7 +698,7 @@
             // 
             this.temperatureLbl.AutoSize = true;
             this.temperatureLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.temperatureLbl.Location = new System.Drawing.Point(175, 260);
+            this.temperatureLbl.Location = new System.Drawing.Point(172, 260);
             this.temperatureLbl.Margin = new System.Windows.Forms.Padding(3);
             this.temperatureLbl.Name = "temperatureLbl";
             this.temperatureLbl.Size = new System.Drawing.Size(37, 20);
@@ -712,15 +712,15 @@
             this.label3.Location = new System.Drawing.Point(3, 416);
             this.label3.Margin = new System.Windows.Forms.Padding(3);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(104, 20);
+            this.label3.Size = new System.Drawing.Size(90, 20);
             this.label3.TabIndex = 41;
-            this.label3.Text = "Salinity, ppm";
+            this.label3.Text = "Salinity, ‰";
             // 
             // salinityLbl
             // 
             this.salinityLbl.AutoSize = true;
             this.salinityLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.salinityLbl.Location = new System.Drawing.Point(175, 416);
+            this.salinityLbl.Location = new System.Drawing.Point(172, 416);
             this.salinityLbl.Margin = new System.Windows.Forms.Padding(3);
             this.salinityLbl.Name = "salinityLbl";
             this.salinityLbl.Size = new System.Drawing.Size(37, 20);
@@ -734,9 +734,9 @@
             this.label4.Location = new System.Drawing.Point(3, 442);
             this.label4.Margin = new System.Windows.Forms.Padding(3);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(166, 20);
+            this.label4.Size = new System.Drawing.Size(163, 20);
             this.label4.TabIndex = 43;
-            this.label4.Text = "Water density, kg/m3";
+            this.label4.Text = "Water density, kg/m³";
             // 
             // label6
             // 
@@ -745,15 +745,15 @@
             this.label6.Location = new System.Drawing.Point(3, 468);
             this.label6.Margin = new System.Windows.Forms.Padding(3);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(140, 20);
+            this.label6.Size = new System.Drawing.Size(137, 20);
             this.label6.TabIndex = 44;
-            this.label6.Text = "Gravity acc, m/s2";
+            this.label6.Text = "Gravity acc, m/s²";
             // 
             // gravityAccLbl
             // 
             this.gravityAccLbl.AutoSize = true;
             this.gravityAccLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.gravityAccLbl.Location = new System.Drawing.Point(175, 468);
+            this.gravityAccLbl.Location = new System.Drawing.Point(172, 468);
             this.gravityAccLbl.Margin = new System.Windows.Forms.Padding(3);
             this.gravityAccLbl.Name = "gravityAccLbl";
             this.gravityAccLbl.Size = new System.Drawing.Size(37, 20);
@@ -764,7 +764,7 @@
             // 
             this.waterDensityLbl.AutoSize = true;
             this.waterDensityLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.waterDensityLbl.Location = new System.Drawing.Point(175, 442);
+            this.waterDensityLbl.Location = new System.Drawing.Point(172, 442);
             this.waterDensityLbl.Margin = new System.Windows.Forms.Padding(3);
             this.waterDensityLbl.Name = "waterDensityLbl";
             this.waterDensityLbl.Size = new System.Drawing.Size(37, 20);
@@ -807,7 +807,7 @@
             // 
             this.gnssLonLbl.AutoSize = true;
             this.gnssLonLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.gnssLonLbl.Location = new System.Drawing.Point(175, 543);
+            this.gnssLonLbl.Location = new System.Drawing.Point(172, 543);
             this.gnssLonLbl.Margin = new System.Windows.Forms.Padding(3);
             this.gnssLonLbl.Name = "gnssLonLbl";
             this.gnssLonLbl.Size = new System.Drawing.Size(37, 20);
@@ -818,7 +818,7 @@
             // 
             this.gnssLatLbl.AutoSize = true;
             this.gnssLatLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.gnssLatLbl.Location = new System.Drawing.Point(175, 517);
+            this.gnssLatLbl.Location = new System.Drawing.Point(172, 517);
             this.gnssLatLbl.Margin = new System.Windows.Forms.Padding(3);
             this.gnssLatLbl.Name = "gnssLatLbl";
             this.gnssLatLbl.Size = new System.Drawing.Size(37, 20);
@@ -840,7 +840,7 @@
             // 
             this.lblgnssDiffLbl.AutoSize = true;
             this.lblgnssDiffLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblgnssDiffLbl.Location = new System.Drawing.Point(175, 569);
+            this.lblgnssDiffLbl.Location = new System.Drawing.Point(172, 569);
             this.lblgnssDiffLbl.Margin = new System.Windows.Forms.Padding(3);
             this.lblgnssDiffLbl.Name = "lblgnssDiffLbl";
             this.lblgnssDiffLbl.Size = new System.Drawing.Size(37, 20);

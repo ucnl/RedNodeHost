@@ -61,6 +61,8 @@ namespace RedNODEHost
 
         #region Properties
 
+        //bool isAutoboat = true;
+
         RedNodePort port;
         SettingsProviderXML<SettingsContainer> settingsProvider;
 
@@ -143,6 +145,9 @@ namespace RedNODEHost
             port.TemperatureUpdated += new EventHandler(port_TemperatureUpdated);
             port.BasesUpdated += new EventHandler(port_BasesUpdated);
             port.PositionUpdated += new EventHandler(port_PositionUpdated);
+
+            port.GGAEvent += new EventHandler<GGAEventArgs>(port_GGAEvent);
+            port.RMCEvent += new EventHandler<RMCEventArgs>(port_RMCEvent);
 
             #endregion
 
@@ -764,13 +769,15 @@ namespace RedNODEHost
 
         private void port_Ready(object sender, EventArgs e)
         {
-            if (!isDefined)
-                port.Send(port.QueryDeviceInfo());
-            else if (!isSalinityUpdated)
-                port.Send(port.QueryLocDataSet(LocalDataIDs.LOC_DATA_SALINITY, settingsProvider.Data.Salinity));
-            else if (!isPressureRatingUpdated)
-                port.Send(port.QueryLocDataGet(LocalDataIDs.LOC_DATA_PRESSURE_RATING));
-
+            //if (!isAutoboat)
+            {
+                if (!isDefined)
+                    port.Send(port.QueryDeviceInfo());
+                else if (!isSalinityUpdated)
+                    port.Send(port.QueryLocDataSet(LocalDataIDs.LOC_DATA_SALINITY, settingsProvider.Data.Salinity));
+                else if (!isPressureRatingUpdated)
+                    port.Send(port.QueryLocDataGet(LocalDataIDs.LOC_DATA_PRESSURE_RATING));
+            }
         }
 
         private void port_Timeout(object sender, EventArgs e)
@@ -826,7 +833,7 @@ namespace RedNODEHost
 
         private void port_TemperatureUpdated(object sender, EventArgs e)
         {
-            InvokeSetText(temperatureLbl, port.Temperature.ToString("F02", CultureInfo.InvariantCulture));
+            InvokeSetText(temperatureLbl, port.Temperature.ToString("F01", CultureInfo.InvariantCulture));
 
             double dpt = port.Depth;
             double tmp = port.Temperature;
@@ -837,28 +844,28 @@ namespace RedNODEHost
 
         private void port_BasesUpdated(object sender, EventArgs e)
         {
-            InvokeSetText(base1Lbl, string.Format(CultureInfo.InvariantCulture, "{0:F02} dB / {1}", port.RedBASE_1.SNR, port.RedBASE_1.Status));
+            InvokeSetText(base1Lbl, string.Format(CultureInfo.InvariantCulture, "{0:F01} dB / {1}", port.RedBASE_1.SNR, port.RedBASE_1.Status));
             if ((port.RedBASE_1.Status == BuoyStatusIDs.ALIVE) || (port.RedBASE_1.Status == BuoyStatusIDs.OK))
                 InvokeSetForeColor(base1Lbl, Color.Green);
             else if (port.RedBASE_1.Status == BuoyStatusIDs.TIMEOUT)
                 InvokeSetForeColor(base1Lbl, Color.Red);
             else InvokeSetForeColor(base1Lbl, Color.Black);
 
-            InvokeSetText(base2Lbl, string.Format(CultureInfo.InvariantCulture, "{0:F02} dB / {1}", port.RedBASE_2.SNR, port.RedBASE_2.Status));
+            InvokeSetText(base2Lbl, string.Format(CultureInfo.InvariantCulture, "{0:F01} dB / {1}", port.RedBASE_2.SNR, port.RedBASE_2.Status));
             if ((port.RedBASE_2.Status == BuoyStatusIDs.ALIVE) || (port.RedBASE_2.Status == BuoyStatusIDs.OK))
                 InvokeSetForeColor(base2Lbl, Color.Green);
             else if (port.RedBASE_2.Status == BuoyStatusIDs.TIMEOUT)
                 InvokeSetForeColor(base2Lbl, Color.Red);
             else InvokeSetForeColor(base2Lbl, Color.Black);
 
-            InvokeSetText(base3Lbl, string.Format(CultureInfo.InvariantCulture, "{0:F02} dB / {1}", port.RedBASE_3.SNR, port.RedBASE_3.Status));
+            InvokeSetText(base3Lbl, string.Format(CultureInfo.InvariantCulture, "{0:F01} dB / {1}", port.RedBASE_3.SNR, port.RedBASE_3.Status));
             if ((port.RedBASE_3.Status == BuoyStatusIDs.ALIVE) || (port.RedBASE_3.Status == BuoyStatusIDs.OK))
                 InvokeSetForeColor(base3Lbl, Color.Green);
             else if (port.RedBASE_3.Status == BuoyStatusIDs.TIMEOUT)
                 InvokeSetForeColor(base3Lbl, Color.Red);
             else InvokeSetForeColor(base3Lbl, Color.Black);
 
-            InvokeSetText(base4Lbl, string.Format(CultureInfo.InvariantCulture, "{0:F02} dB / {1}", port.RedBASE_4.SNR, port.RedBASE_4.Status));
+            InvokeSetText(base4Lbl, string.Format(CultureInfo.InvariantCulture, "{0:F01} dB / {1}", port.RedBASE_4.SNR, port.RedBASE_4.Status));
             if ((port.RedBASE_4.Status == BuoyStatusIDs.ALIVE) || (port.RedBASE_4.Status == BuoyStatusIDs.OK))
                 InvokeSetForeColor(base4Lbl, Color.Green);
             else if (port.RedBASE_4.Status == BuoyStatusIDs.TIMEOUT)
@@ -872,6 +879,8 @@ namespace RedNODEHost
             InvokeSetText(lonLbl, Angle2Str(port.Longitude, false));
 
             InvokeSetText(rerrLbl, port.RadialError.ToString("F03", CultureInfo.InvariantCulture));
+
+            InvokeSetText(depthLbl, port.Depth.ToString("F02", CultureInfo.InvariantCulture));
 
             if (port.RadialError <= settingsProvider.Data.RadialErrorThreshold)
             {
@@ -898,6 +907,50 @@ namespace RedNODEHost
 
             locHyst = 0;
             onceLocated = true;
+        }
+
+        private void port_GGAEvent(object sender, GGAEventArgs e)
+        {
+            /*
+            if ((!double.IsNaN(e.Latitude)) && (!double.IsNaN(e.Longitude)))
+            {
+                InvokeSetText(gnssLatLbl, Angle2Str(e.Latitude, true));
+                InvokeSetText(gnssLonLbl, Angle2Str(e.Longitude, false));
+
+                GeoPlot.GeoCoordinate2D newPoint = new GeoPlot.GeoCoordinate2D();
+                newPoint.Latitude = e.Latitude;
+                newPoint.Longitude = e.Longitude;
+
+                InvokeAddGNSSPoint(newPoint);
+
+                gnssTrack.Add(new GeoPoint(e.Latitude, e.Longitude));
+
+                double dist = GetDistance2D(port.Latitude, port.Longitude, e.Latitude, e.Longitude);
+                InvokeSetText(lblgnssDiffLbl, dist.ToString("F03", CultureInfo.InvariantCulture));
+            }
+            */
+        }
+
+        private void port_RMCEvent(object sender, RMCEventArgs e)
+        {
+            /*
+            if ((!double.IsNaN(e.Latitude)) && (!double.IsNaN(e.Longitude)))
+            {
+                InvokeSetText(gnssLatLbl, Angle2Str(e.Latitude, true));
+                InvokeSetText(gnssLonLbl, Angle2Str(e.Longitude, false));
+
+                GeoPlot.GeoCoordinate2D newPoint = new GeoPlot.GeoCoordinate2D();
+                newPoint.Latitude = e.Latitude;
+                newPoint.Longitude = e.Longitude;
+
+                InvokeAddGNSSPoint(newPoint);
+
+                gnssTrack.Add(new GeoPoint(e.Latitude, e.Longitude));
+
+                double dist = GetDistance2D(port.Latitude, port.Longitude, e.Latitude, e.Longitude);
+                InvokeSetText(lblgnssDiffLbl, dist.ToString("F03", CultureInfo.InvariantCulture));
+            }
+            */
         }
 
         #endregion                               
