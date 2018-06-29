@@ -160,7 +160,9 @@ namespace RedNODEHost
 
         public RedNodePort(string portName)
         {
+
             portSettings = new SerialPortSettings(portName, BaudRate.baudRate9600, Parity.None, DataBits.dataBits8, StopBits.One, Handshake.None);
+            //portSettings = new SerialPortSettings(portName, BaudRate.baudRate115200, Parity.None, DataBits.dataBits8, StopBits.One, Handshake.None);
            
             #region timers
 

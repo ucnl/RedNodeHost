@@ -87,11 +87,11 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\UCNLLibs\UCNLNMEA\UCNLNMEA\bin\Release\UCNLNMEA.dll</HintPath>
     </Reference>
-    <Reference Include="UCNLSalinity, Version=1.0.6282.18984, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="UCNLSalinity, Version=1.0.6564.25096, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\UCNLLibs\UCNLSalinity\UCNLSalinity\bin\Release\UCNLSalinity.dll</HintPath>
     </Reference>
-    <Reference Include="UCNLUI, Version=1.0.6282.19007, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="UCNLUI, Version=1.0.6718.20004, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\UCNLLibs\UCNLUI\UCNLUI\bin\Release\UCNLUI.dll</HintPath>
     </Reference>
